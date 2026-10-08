@@ -1,4 +1,6 @@
+import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+import process from 'node:process';
 import { URL, fileURLToPath } from 'node:url';
 
 import VueI18n from '@intlify/unplugin-vue-i18n/vite';
@@ -17,6 +19,9 @@ import svgLoader from 'vite-svg-loader';
 import { configDefaults } from 'vitest/config';
 
 const baseUrl = process.env.BASE_URL ?? '/';
+
+const packageVersion = process.env.npm_package_version
+  || JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8')).version;
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -109,7 +114,7 @@ export default defineConfig({
     },
   },
   define: {
-    'import.meta.env.PACKAGE_VERSION': JSON.stringify(process.env.npm_package_version),
+    'import.meta.env.PACKAGE_VERSION': JSON.stringify(packageVersion),
   },
   test: {
     exclude: [...configDefaults.exclude, '**/*.e2e.spec.ts'],

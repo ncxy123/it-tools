@@ -8,6 +8,7 @@ home:
   subtitle: '学生每天要用的工具，都在这里'
   basedOn: '基于 IT-Tools'
   license: 'GPL-3.0 开源许可'
+  ourSource: '本项目源码'
   toggleMenu: '切换菜单'
   home: '主页'
   uiLib: 'UI 库'

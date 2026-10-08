@@ -79,6 +79,12 @@ const tools = computed<ToolCategory[]>(() => [
             </template>
           </div>
           <div>
+            {{ $t('home.ourSource') }}
+            <c-link target="_blank" rel="noopener" href="https://github.com/ncxy123/it-tools">
+              ncxy123/it-tools
+            </c-link>
+          </div>
+          <div>
             © {{ new Date().getFullYear() }}
             <c-link target="_blank" rel="noopener" href="https://corentin.tech?utm_source=it-tools&utm_medium=footer">
               Corentin Thomasset

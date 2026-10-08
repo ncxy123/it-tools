@@ -8,6 +8,7 @@ home:
   subtitle: 'The tools students use every day'
   basedOn: 'Based on IT-Tools'
   license: 'GPL-3.0 license'
+  ourSource: 'Source code'
   toggleMenu: 'Toggle menu'
   home: Home
   uiLib: 'UI Lib'
