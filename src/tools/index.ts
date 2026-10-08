@@ -4,6 +4,7 @@ import { tool as basicAuthGenerator } from './basic-auth-generator';
 import { tool as emailNormalizer } from './email-normalizer';
 
 import { tool as campusTimetable } from './campus-timetable';
+import { tool as gpaCalculator } from './gpa-calculator';
 
 import { tool as asciiTextDrawer } from './ascii-text-drawer';
 
@@ -93,7 +94,7 @@ import { tool as yamlViewer } from './yaml-viewer';
 export const toolsByCategory: ToolCategory[] = [
   {
     name: 'Campus',
-    components: [campusTimetable],
+    components: [campusTimetable, gpaCalculator],
   },
   {
     name: 'Crypto',
