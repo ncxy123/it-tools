@@ -3,6 +3,8 @@ import { tool as base64StringConverter } from './base64-string-converter';
 import { tool as basicAuthGenerator } from './basic-auth-generator';
 import { tool as emailNormalizer } from './email-normalizer';
 
+import { tool as campusTimetable } from './campus-timetable';
+
 import { tool as asciiTextDrawer } from './ascii-text-drawer';
 
 import { tool as textToUnicode } from './text-to-unicode';
@@ -89,6 +91,10 @@ import { tool as xmlFormatter } from './xml-formatter';
 import { tool as yamlViewer } from './yaml-viewer';
 
 export const toolsByCategory: ToolCategory[] = [
+  {
+    name: 'Campus',
+    components: [campusTimetable],
+  },
   {
     name: 'Crypto',
     components: [tokenGenerator, hashText, bcrypt, uuidGenerator, ulidGenerator, cypher, bip39, hmacGenerator, rsaKeyPairGenerator, passwordStrengthAnalyser, pdfSignatureChecker],
