@@ -3,9 +3,37 @@ import { get } from '@vueuse/core';
 import type { Plugin } from 'vue';
 import { createI18n } from 'vue-i18n';
 
+export function detectInitialLocale(): string {
+  const available = Object.keys(messages as Record<string, unknown>);
+  let stored: string | null = null;
+
+  try {
+    stored = localStorage.getItem('locale');
+  }
+  catch {
+    stored = null;
+  }
+
+  if (stored) {
+    const normalized = stored.replace(/^"|"$/g, '');
+    if (available.includes(normalized)) {
+      return normalized;
+    }
+  }
+
+  const browser = (typeof navigator === 'undefined' ? '' : navigator.language || '').toLowerCase();
+  if (!browser) {
+    return 'en';
+  }
+
+  return available.find(locale => browser === locale)
+    ?? available.find(locale => browser.startsWith(locale))
+    ?? 'en';
+}
+
 const i18n = createI18n({
   legacy: false,
-  locale: 'en',
+  locale: detectInitialLocale(),
   messages,
 });
 

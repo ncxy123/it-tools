@@ -4,7 +4,10 @@ home:
     favoriteTools: '我的收藏'
     allTools: '全部工具'
     favoritesDndToolTip: '拖放重新排列收藏夹'
-  subtitle: '助力开发人员和 IT 工作者'
+  brandTitle: '校园工具箱'
+  subtitle: '学生每天要用的工具，都在这里'
+  basedOn: '基于 IT-Tools'
+  license: 'GPL-3.0 开源许可'
   toggleMenu: '切换菜单'
   home: '主页'
   uiLib: 'UI 库'
@@ -70,6 +73,14 @@ tools:
     measurement: '测量'
     text: '文本'
     data: '数据'
+    campus: '校园'
+
+  campus-timetable:
+    title: 课表冲突检测与空闲时段计算
+    description: 粘贴教务系统的课表即可批量导入，自动按周次检测时间冲突，算出每周的空闲时段，还能一键导出手机日历。
+  gpa-calculator:
+    title: 绩点 / 加权平均分换算
+    description: 内置多套绩点算法可一键切换，支持百分制、五级制、字母等级混合录入，并能反推目标绩点还差多少分。
 
   password-strength-analyser:
     title: 密码强度分析仪
@@ -388,3 +399,215 @@ tools:
   text-to-binary:
     title: 文本到 ASCII 二进制
     description: 将文本转换为其 ASCII 二进制表示形式，反之亦然。
+
+# ── 校园工具箱：新增工具的界面文案 ─────────────────────────────
+campus:
+  weekday:
+    mon: 周一
+    tue: 周二
+    wed: 周三
+    thu: 周四
+    fri: 周五
+    sat: 周六
+    sun: 周日
+  common:
+    add: 添加
+    added: 已添加
+    edit: 编辑
+    save: 保存
+    saved: 已保存
+    cancel: 取消
+    delete: 删除
+    clear: 清空
+    cleared: 已清空
+    reset: 重置
+    apply: 应用
+    copied: 已复制到剪贴板
+    name: 课程名称
+    location: 地点
+    teacher: 教师
+    settings: 参数设置
+    loadExample: 载入示例
+    loadedExample: 已载入示例数据（{n} 条）
+  timetable:
+    tabGrid: 课表网格
+    tabConflicts: 冲突检测
+    tabFree: 空闲时段
+    bulkImport: 批量导入
+    weekLabel: 第 {n} 周
+    weekHint: 本学期上课周次：{list}
+    periodRange: 第 {a}-{b} 节
+    periodSuffix: 节
+    periodColumn: 节次
+    gridTitle: 课表预览
+    gridLegend: 红色描边代表时间冲突
+    showWeekend: 显示周末
+    statCourses: 课程门数
+    statSessions: 上课安排
+    statBusiest: 单周最多课时
+    statConflicts: 时间冲突
+    statFreeNow: 本周空闲 {n} 段
+    emptyTitle: 还没有课程
+    emptyHint: 可以直接粘贴教务系统的课表文本批量导入，也可以手动逐条添加
+    conflictTitle: 冲突检测
+    noConflict: 没有检测到时间冲突，可以放心选课
+    duplicateTitle: 同一门课重复排课（不计为冲突）
+    jumpToWeek: 跳到冲突周次
+    freeTitle: 空闲时段
+    freeMinLength: 最短连续节数
+    freeNone: 无连续空闲
+    freeHint: 以上是第 {week} 周的空闲时段，可以用来安排自习、社团活动或约球。
+    listTitle: 课程列表（{n} 条）
+    exportIcs: 导出日历 (.ics)
+    exportCsv: 导出表格 (.csv)
+    exportEmpty: 还没有课程可以导出
+    exportedIcs: 已导出 .ics 文件，可直接导入手机日历
+    exportedCsv: 已导出 .csv 文件
+    shareCode: 生成分享码
+    shareLabel: 分享码（发给同学即可导入你的课表）
+    shareHint: 分享码里只有课表本身，不含任何个人信息，也不会被上传到服务器。
+    clearConfirm: 确定清空全部课程吗？
+    addTitle: 添加一门课
+    editTitle: 编辑课程
+    day: 星期
+    period: 节次
+    weeks: 周次
+    startPeriod: 起始
+    endPeriod: 结束
+    weeksPreview: 共 {n} 周上课（{text}）
+    weeksHelp: 支持 1-16、1-16周(单)、1-16双、1,3,5 等写法
+    namePlaceholder: 如：高等数学A
+    locationPlaceholder: 如：教1-201
+    teacherPlaceholder: 如：张伟
+    needName: 请先填写课程名称
+    needWeeks: 请填写周次，例如 1-16
+    needPeriodOrder: 结束节次不能小于起始节次
+    shareImportTitle: 从分享码导入
+    sharePlaceholder: 粘贴同学发给你的分享码
+    shareImportButton: 导入课表
+    shareInvalid: 分享码无法识别，请确认是否复制完整
+    shareImported: 已导入 {n} 条上课安排
+    semesterStart: 学期第一周的周一
+    semesterStartHint: 日期要填周一，导出日历时以它为基准推算每次上课的具体日期
+    totalWeeks: 学期总周数
+    totalPeriods: 每天节数
+    periodTimes: 作息时间（每行一节，格式 08:00-08:45）
+    periodTimesHint: 修改后会同步影响网格左侧的时间显示和导出的日历时间
+    periodTimesSaved: 已保存 {n} 节课的作息时间
+    periodTimesInvalid: 格式不正确，请按 08:00-08:45 每行一节填写
+    dateInvalid: 日期格式应形如 2026-09-07
+    importFormat: 每行写一门课的一次上课安排，字段之间用竖线、逗号或制表符分隔。除课程名以外的字段都会按内容自动识别，所以顺序可以调换，也可以省略。
+    importPlaceholder: 从教务系统复制课表后粘贴到这里
+    importPreview: 检查一下
+    importAppend: 追加导入
+    importReplace: 覆盖现有课表
+    importResult: 成功识别 {n} 条上课安排
+    importNothing: 没有识别到任何课程，请检查一下格式
+    imported: 已导入 {n} 条上课安排
+    importErrors: 有 {n} 行无法识别
+    importErrorLine: 第 {line} 行：
+    exampleLoaded: 已载入示例课表（{n} 条）
+    whyTitle: 这个工具为什么更好用
+    why1: 一次粘贴整学期课表，不用一条一条点 —— 教务系统的课表文本直接贴进来就能识别。
+    why2: 按周次判断冲突，而不是只看节次 —— 单周和双周分开上的两门课不会被误报成冲突。
+    why3: 直接把空闲时段算出来给你看 —— 找自习、约社团活动、约球，先看哪几段时间是整块空的。
+    why4: 一键导出 .ics 日历 —— 导入手机系统日历，课前 15 分钟自动提醒，不用再天天翻课表。
+    why5: 所有数据只存在你自己的浏览器里，不联网、不上传，校园网断了照样能用。
+  gpa:
+    scaleLabel: 绩点算法
+    modeLabel: 成绩录入方式
+    includeFailed: 不及格课程计入绩点
+    bandTableTitle: 查看当前算法的分段对照表
+    customBandsLabel: 自定义分段规则
+    customBandsHint: 每行一条，格式为「最低分:绩点」，例如 90:4.0
+    customInvalid: 规则无法识别，请按「最低分:绩点」每行一条填写
+    metricGpa: 平均学分绩点
+    metricGpaSub: 按{scale}计算
+    metricWeighted: 加权平均分
+    metricArithmetic: 算术平均分
+    metricCredits: 已计入学分
+    metricTotalCredits: 全部学分 {n}
+    metricFailed: 不及格门数
+    metricQualityPoints: 学分绩点总和 {n}
+    courseListTitle: 课程与成绩
+    addRow: 添加一门课
+    bulkImport: 批量导入
+    exportCsv: 导出明细 (.csv)
+    exportEmpty: 还没有课程可以导出
+    exported: 已导出成绩明细
+    clearConfirm: 确定清空所有课程成绩吗？
+    credits: 学分
+    score: 成绩
+    point: 绩点
+    included: 计入
+    namePlaceholder: 课程名称
+    rowErrors: 有 {n} 行还没填完或者格式不对，这些行先不参与计算
+    tableHint: 取消勾选「计入」的课程（比如部分任选课、体育课）不会进入绩点计算，但仍会保留在明细里。
+    targetTitle: 目标绩点反推
+    targetGpa: 目标绩点
+    remainingCredits: 剩余学分
+    targetAchieved: 以目前的成绩，目标已经达成了，后面的课程正常发挥就好。
+    targetImpossible: 目标超过了当前算法的满绩点（{max}），这个算法下无法达成，建议先核对算法是否选对。
+    targetRequired: 剩余 {remaining} 学分的平均学分绩点需要达到 {point}，大致相当于每门课考到 {percent} 分左右。
+    targetHint: 反推结果按「剩余课程学分平均」估算，实际情况还要看后续课程的学分分布。
+    importFormat: 每行写一门课，依次是课程名、学分、成绩，用空格、逗号或竖线分隔。
+    importPlaceholder: 从教务系统复制成绩单后粘贴到这里
+    importAppend: 追加导入
+    importReplace: 覆盖现有数据
+    importNothing: 没有识别到任何课程，请检查一下格式
+    imported: 已导入 {n} 条成绩
+    importErrors: 有 {n} 行无法识别
+    importErrorLine: 第 {line} 行：
+    whyTitle: 这个工具为什么更好用
+    why1: 内置多套常见绩点算法，一键切换对比 —— 保研、留学、评奖学金口径各不相同，同一张成绩单能算出不同结果。
+    why2: 百分制、五级制、字母等级可以混合录入 —— 原始成绩单怎么写就怎么录，不用自己先心算换算一遍。
+    why3: 能反推目标绩点 —— 想知道「剩下的课平均要考多少分才能到 3.5」，这里直接给答案。
+    why4: 选修课、体育课能一键排除 —— 大多数在线绩点计算器做不到按课程逐条勾选是否计入。
+    why5: 数据只存在本地浏览器，成绩单不会离开你的电脑。
+    scale:
+      standard40:
+        name: 通用 4.0 制（十段法）
+        note: 国内多数高校与北美申请最常用的分段换算
+      pku40:
+        name: 北大 4.0 制（五分段）
+        note: 区间更宽，85+ 即为 3.7，对高分段更友好
+      strict40:
+        name: 严格 4.0 制
+        note: 只有 90 分以上才记满绩，多数 985 院校采用
+      linear50:
+        name: 线性折算（成绩−50）/10
+        note: 部分院校教务处使用的连续公式，无分段跳变
+      fivePoint:
+        name: 五分制
+        note: 按 90/80/70/60 分段记 5.0–1.0 绩点
+      fourFive:
+        name: 4.5 制（八段法）
+        note: 常见于部分理工科院校
+      custom:
+        name: 自定义规则
+        note: 按「最低分:绩点」逐行填写，适配本校教务处口径
+    mode:
+      auto:
+        label: 自动识别
+        hint: 数字、优秀 / 良好 / 中等、A+ A- B+ 混在一张表里也能认
+      percent:
+        label: 百分制
+        hint: 直接输入 0–100 的数字
+      level5:
+        label: 五级制
+        hint: 优秀 / 良好 / 中等 / 及格 / 不及格
+      letter:
+        label: 字母等级
+        hint: A+ A A- B+ B B- C+ C C- D F
+
+# ── 离线可用提示 ──────────────────────────────────────────────
+offline:
+  title: 当前处于离线状态
+  hint: 已缓存过的工具仍然可以正常使用，联网后会自动恢复。
+  cacheReady: 已缓存完成，断网也能打开这个网站
+  dismiss: 知道了
+
+# ── 应用名称（页面标题、PWA 等处统一引用） ─────────────────────
+app:
+  name: '校园工具箱'
+  tagline: '学生每天要用的在线工具'

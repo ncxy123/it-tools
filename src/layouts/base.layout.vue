@@ -39,7 +39,7 @@ const tools = computed<ToolCategory[]>(() => [
         <HeroGradient class="gradient" />
         <div class="text-wrapper">
           <div class="title">
-            IT - TOOLS
+            {{ $t('home.brandTitle') }}
           </div>
           <div class="divider" />
           <div class="subtitle">
@@ -61,8 +61,7 @@ const tools = computed<ToolCategory[]>(() => [
 
         <div class="footer">
           <div>
-            IT-Tools
-
+            {{ $t('home.basedOn') }}
             <c-link target="_blank" rel="noopener" :href="`https://github.com/CorentinTh/it-tools/tree/v${version}`">
               v{{ version }}
             </c-link>
@@ -83,6 +82,11 @@ const tools = computed<ToolCategory[]>(() => [
             © {{ new Date().getFullYear() }}
             <c-link target="_blank" rel="noopener" href="https://corentin.tech?utm_source=it-tools&utm_medium=footer">
               Corentin Thomasset
+            </c-link>
+          </div>
+          <div>
+            <c-link target="_blank" rel="noopener" href="https://www.gnu.org/licenses/gpl-3.0.html">
+              {{ $t('home.license') }}
             </c-link>
           </div>
         </div>
@@ -198,8 +202,9 @@ const tools = computed<ToolCategory[]>(() => [
     color: #fff;
 
     .title {
-      font-size: 25px;
+      font-size: 23px;
       font-weight: 600;
+      white-space: nowrap;
     }
 
     .divider {

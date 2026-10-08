@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { useHead } from '@vueuse/head';
 
-useHead({ title: 'About - IT Tools' });
+const { t } = useI18n();
+useHead({ title: computed(() => `${t('app.name')} - About`) });
 </script>
 
 <template>

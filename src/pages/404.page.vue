@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { useHead } from '@vueuse/head';
 
-useHead({ title: 'Page not found - IT Tools' });
+const { t } = useI18n();
+useHead({ title: computed(() => `404 - ${t('app.name')}`) });
 </script>
 
 <template>
