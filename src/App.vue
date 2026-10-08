@@ -4,6 +4,7 @@ import { NGlobalStyle, NMessageProvider, NNotificationProvider, darkTheme } from
 import { darkThemeOverrides, lightThemeOverrides } from './themes';
 import { layouts } from './layouts';
 import { useStyleStore } from './stores/style.store';
+import OfflineIndicator from './components/OfflineIndicator.vue';
 
 const route = useRoute();
 const layout = computed(() => route?.meta?.layout ?? layouts.base);
@@ -28,6 +29,7 @@ syncRef(
         <component :is="layout">
           <RouterView />
         </component>
+        <OfflineIndicator />
       </NNotificationProvider>
     </NMessageProvider>
   </n-config-provider>
